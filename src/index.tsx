@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './App.css'
-import fhirLogo from './favicon.png'
+import './styles.module.css'
+// import favicon from 'favicon.png'
 import ContextPage from './components/context'
 import { TokenSetPage, TokenResponse } from './components/tokenSet'
 import IntrospectPage from './components/introspect'
@@ -56,13 +56,13 @@ const App: React.FunctionComponent<{
     <div className='App bg-gray-200'>
       <nav className='flex items-center justify-between flex-wrap bg-gray-800 p-6'>
         <div className='flex items-center flex-shrink-0 text-white mr-6'>
-          <img
-            src={fhirLogo}
+          {/* <img
+            src={favicon}
             alt='fhirUser logo'
             className='fill-current h-8 w-8 mr-2'
             width='49'
             height='54'
-          />
+          /> */}
           <span className='font-semibold text-xl tracking-tight'>
             fhirUser: SMART on FHIR App
           </span>
@@ -150,7 +150,7 @@ const App: React.FunctionComponent<{
                         // eslint-disable-next-line camelcase
                         accessToken={access_token}
                         // eslint-disable-next-line camelcase
-                        id_token={id_token as string}
+                        idToken={id_token as string}
                       />
                     )
                   case 'introspect':
@@ -158,7 +158,7 @@ const App: React.FunctionComponent<{
                       <IntrospectPage
                         // eslint-disable-next-line camelcase
                         accessToken={access_token}
-                        introspect_endpoint={introspectEndpoint as string}
+                        introspectEndpoint={introspectEndpoint as string}
                       />
                     )
                   case 'tokenSet':
